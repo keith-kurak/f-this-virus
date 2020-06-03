@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="root">
+      <div class="page_container">
+        <div
+          class="page main"
+          v-bind:class="{ active: active_page_name === 'main' }"
+        >
+          <div class="section">
+            <div class="section_header">
+              F This Virus!
+            </div>
+
+            <div class="section_text">
+              This plugin will apply, uh... adjectives to the C-word and related
+              terms. Use the options below to turn the swears up or down, toggle
+              special features, or disable the plugin for the current site.
+            </div>
+
+            <div class="section_buttons">
+              <div class="chrome_button" v-on:click="reload()">
+                Reload to see changes
+              </div>
+            </div>
+          </div>
+          <div class="section section_link" style="flex-direction: column; height: auto;">
+            <div class="section_link_text" style="align-self: flex-start; padding-bottom: 5px;">
+              Swear slider
+            </div>
+            <div class="slidecontainer">
+              <input
+                type="range"
+                min="1"
+                max="3"
+                v-model="profanitySliderIndex"
+                class="slider"
+                id="myRange"
+              />
+            </div>
+            <div class="optionTitle" v-text="profanityMode"></div>
+            <div
+              class="optionDescription"
+              v-text="profanityModeDescription"
+            ></div>
+          </div>
+
+          <div
+            class="section section_link"
+            v-on:click="fixRacistTerms = !fixRacistTerms"
+          >
+            <div class="section_link_text">
+              Call out racism
+            </div>
+
+            <div
+              class="chrome_toggle"
+              v-bind:class="{ active: fixRacistTerms }"
+            >
+              <div class="chrome_toggle-bar"></div>
+              <div class="chrome_toggle-knob"></div>
+            </div>
+          </div>
+
+					<div class="optionDescription">Just adding an expletive to some terms would be letting them off far too easily</div>
+					
+					<div
+            class="section section_link"
+            v-on:click="remindNotResponsible = !remindNotResponsible"
+          >
+            <div class="section_link_text">
+              Remind me who's not responsible
+            </div>
+
+            <div
+              class="chrome_toggle"
+              v-bind:class="{ active: remindNotResponsible }"
+            >
+              <div class="chrome_toggle-bar"></div>
+              <div class="chrome_toggle-knob"></div>
+            </div>
+          </div>
+
+          <div class="optionDescription">A lot of people screwed up, but not this guy!</div>
+
+          <div
+            class="section section_link"
+            v-on:click="current_hostname_allowed = !current_hostname_allowed"
+          >
+            <div class="section_link_text">
+              Disable on <span v-text="current_hostname"></span>
+            </div>
+
+            <div
+              class="chrome_toggle"
+              v-bind:class="{ active: current_hostname_allowed }"
+            >
+              <div class="chrome_toggle-bar"></div>
+              <div class="chrome_toggle-knob"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="script" hidden>
+      <script src="/lib/jquery.min.js"></script>
+      <script src="/lib/webx.js"></script>
+      <script src="/lib/vue.min.js"></script>
+
+      <script src="main.js"></script>
+    </div>
+  </body>
+</html>

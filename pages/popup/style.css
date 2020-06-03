@@ -1,0 +1,495 @@
+	/* general */
+
+  html, body {
+
+    overflow: hidden;
+    display: block;
+
+    width: 360px;
+    margin: 0px;
+
+    border: none;
+
+  }
+
+  #root {
+
+    width: 100%;
+    height: 100%;
+
+    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+
+  }
+
+  * {
+
+    box-sizing: border-box;
+
+  }
+
+  #header {
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    height: 50px;
+
+    background-color: #124577;
+    border-bottom: 1px solid rgba( 0, 0, 0, 0.12 );
+
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+
+  }
+
+  #header img {
+
+    height: 32px;
+    width: 32px;
+
+    margin: 0px 12px;
+
+  }
+
+/**/
+
+/* page_container */
+
+  .page_container {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+  }
+
+  .page {
+
+    display: none;
+
+    width: 100%;
+    height: 100%;
+
+  }
+
+  .page.active {
+
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .page_header {
+
+    position: relative;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    height: 40px;
+    width: 100%;
+    padding: 0px 20px;
+
+    background-color: hsla(127, 44%, 31%, 1);
+
+  }
+
+  .page_body {
+
+    overflow: auto;
+    height: calc( 100% - 40px );
+
+  }
+
+  .page_header_logo {
+
+    height: 31px;
+    margin-top: 3px;
+
+  }
+
+  .page_header_close_icon {
+
+    position: absolute;
+
+    top: 10px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+
+    opacity: 0.6;
+    cursor: pointer;
+
+    fill: white;
+
+  }
+
+  .page_header_close_icon:hover {
+
+    opacity: 0.9;
+
+  }
+
+  .section_header {
+
+    height: 44px;
+    padding: 20px 20px 0;
+
+    display: block;
+    color: #717783;
+    font-size: 16px;
+    font-weight: 600;
+
+  }
+
+  .section_sub_header_link {
+
+    height: 20px;
+    padding: 0px 20px;
+
+  }
+
+  .section_sub_header_link a {
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none;
+
+    color: #83A4FF;
+    font-size: 14px;
+    font-weight: 500;
+
+  }
+
+  .section_body {
+
+    padding: 10px 20px 20px 20px;
+
+  }
+
+  .company_detail {
+
+    color: #717783;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+
+  }
+
+  .tag_container {
+
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+
+  .tag {
+
+    margin-right: 5px;
+    background: #EDEDED;
+    display: inline-block;
+    margin: 0px 4px 4px 0px;
+    border-radius: 2px;
+    background-color: #F7F5FF;
+    padding: 2px 6px;
+    height: 22px;
+    overflow: hidden;
+    color: #717783;
+    font-size: 14px;
+    font-weight: 400;
+
+  }
+
+  .root_page {
+
+  }
+
+  /* login_page */
+
+    .login_page {
+
+      display: none;
+
+    }
+
+    .login_page.active {
+
+      display: block;
+
+    }
+
+  /**/
+
+/**/
+
+/* section */
+
+  .section {
+
+    padding-bottom: 16px;
+
+  }
+
+  .section_header {
+
+    padding: 20px 20px 16px 20px;
+
+    color: rgb(32, 33, 36);
+    font-size: 15px;
+
+  }
+
+  .section_text {
+
+    padding: 0px 20px 1px 20px;
+
+    color: rgb(95, 99, 104);
+    font-size: 13px;
+
+  }
+
+  .section_buttons {
+
+    display: flex;
+    justify-content: flex-end;
+
+    padding: 24px 16px 0px 16px;
+
+  }
+
+  .chrome_input {
+
+    height: 32px;
+    width: 100%;
+    padding: 4px 8px;
+
+    border-radius: 2px;
+    outline: none;
+    border: 1px solid rgba( 0, 0, 0, 0.12 );
+
+  }
+
+  .tooltip {
+
+    display: flex;
+
+    margin: 12px 0px 12px;
+    padding: 8px 16px;
+
+    background-color: rgba(135,39,32, 0.1);
+    border: 1px solid rgba( 0, 0, 0, 0.12 );
+    border-radius: 2px;
+
+    font-size: 13px;
+    text-align: left;
+
+  }
+
+  /* section_link */
+
+    .section_link {
+
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+
+      height: 48px;
+      padding: 12px 20px 12px 20px;
+
+      border-top: 1px solid #dbdbdb;
+
+      color: rgb(32, 33, 36);
+      font-size: 13px;
+
+      cursor: pointer;
+
+    }
+
+    .section_link_text {
+
+      flex-grow: 1;
+
+    }
+
+    .section_link_icon_wrap {
+
+      width: 36px;
+      height: 36px;
+      padding: 8px;
+
+    }
+
+    .section_link_icon {
+
+      width: 20px
+      height: 20px;
+
+      fill: rgb(95, 99, 104);
+
+    }
+
+  /**/
+
+/**/
+
+/* chrome_button */
+
+  .chrome_button {
+
+    box-sizing: border-box;
+
+    height: 32px;
+    padding: 8px 16px;
+
+    border-radius: 3px;
+    background-color: #4CAF50;
+
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+  }
+
+  .chrome_button:hover {
+
+    background-color: #4CAF50;
+
+  }
+
+/**/
+
+/* chrome_toggle */
+
+  .chrome_toggle {
+
+    position: relative;
+
+    height: 16px;
+    width: 34px;
+
+  }
+
+  .chrome_toggle-bar {
+
+    position: absolute;
+
+    top: 2px;
+    left: 3px;
+    height: 12px;
+    width: 28px;
+
+    border-radius: 8px;
+    background-color:rgb(189, 193, 198);
+
+    transition: all 80ms linear;
+
+  }
+
+  .chrome_toggle-knob {
+
+    position: absolute;
+
+    top: 0px;
+    left: 0px;
+    height: 16px;
+    width: 16px;
+
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+
+    transition: all 80ms linear;
+
+  }
+
+  .chrome_toggle.active .chrome_toggle-bar {
+
+    background-color: #4CAF50;
+    opacity: 0.4;
+
+  }
+
+  .chrome_toggle.active .chrome_toggle-knob {
+
+    left: auto;
+    right: 0px;
+    background-color: #4CAF50;
+
+  }
+
+      a.kx-logo img {
+          filter: grayscale(90%);
+          opacity: .5;
+
+          float: right;
+          margin: 0 16px 12px 0;
+      }
+
+      a.kx-logo:hover img {
+          filter: grayscale(0%);
+          opacity: 1;
+      }
+/**/
+
+.optionTitle {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #717783;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.optionDescription {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  color: rgb(95, 99, 104);
+  font-size: 12px;
+}
+
+.slidecontainer {
+  width: 85%; /* Width of the outside container */
+  margin: auto;
+  padding-bottom: 10px;
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 12px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  border-radius: 6px;
+  opacity: 1; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 16px; /* Set a specific slider handle width */
+  height: 16px; /* Slider handle height */
+  border-radius: 50%;
+  background: #4CAF50; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+
+    transition: all 80ms linear;
+}

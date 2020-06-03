@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "version": "0.0.2",
+  "name": "F This Virus!",
+  "description": "Tell your browser what you really think of this stupid pandemic",
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "exclude_matches": [
+        "https://docs.google.com/*",
+        "https://drive.google.com/*",
+        "https://www.cdc.gov/*"
+      ],
+      "matches": [ "*://*/*" ],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": ["storage", "tabs"],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "browser_action": {
+    "default_popup": "/pages/popup/index.html"
+  },
+  "icons": { "128": "/img/icon.png" }
+}
